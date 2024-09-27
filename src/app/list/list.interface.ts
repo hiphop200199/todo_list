@@ -1,5 +1,5 @@
 export interface list{
-    id:number,
+    id:string,
     content:string,
     date:string
 }

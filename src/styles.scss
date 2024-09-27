@@ -1,8 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-$dark:#0A043C;
-$light:#FFE3D8;
-$grey:#BBBBBB;
-$blue:#03506F;
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 $normalFont:clamp(1.5rem,1rem + 0.5vw,2rem);
 *{
 padding: 0;
@@ -11,13 +8,16 @@ box-sizing: border-box;
 scroll-behavior: smooth;
 overflow-x: hidden;
 font-size: $normalFont;
+font-family: "Barlow", sans-serif;
+transition: 0.3s;
 }
-
-.light{
-    background-color: $light;
-    color: $dark;
+//使用css變數可在執行期間切換
+//使用has選擇器做主題切換
+:root:has(#light:checked){
+    --backgroud-color:#FFE3D8;
+--text-color:#0A043C;
 }
-.dark{
-    background-color: $dark;
-    color: $light;
+:root:has(#dark:checked){
+    --backgroud-color:#0A043C;
+--text-color:#FFE3D8;
 }
