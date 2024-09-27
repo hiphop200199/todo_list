@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+$dark:#0A043C;
+$light:#FFE3D8;
+$grey:#BBBBBB;
+$blue:#03506F;
+$normalFont:clamp(1.5rem,1rem + 0.5vw,2rem);
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+overflow-x: hidden;
+font-size: $normalFont;
+}
+
+.light{
+    background-color: $light;
+    color: $dark;
+}
+.dark{
+    background-color: $dark;
+    color: $light;
+}

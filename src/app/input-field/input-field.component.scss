@@ -1,0 +1,28 @@
+$dark:#0A043C;
+$light:#FFE3D8;
+$grey:#BBBBBB;
+$blue:#03506F;
+$radius:20px;
+:host{
+    display: flex;
+    width: clamp(30ch,70%,50ch);
+    border-radius: $radius;
+    border: 3px groove $dark;
+    *{
+        border: none;
+        background: none;
+    }
+    input{
+        width: 90%;
+        border-inline-end: 3px groove $dark;
+        border-top-left-radius: $radius;
+        border-bottom-left-radius: $radius;
+        outline: none;
+    }
+    button{
+        width: 10%;
+        border-top-right-radius: $radius;
+        border-bottom-right-radius: $radius;
+        cursor: pointer;
+    }
+}

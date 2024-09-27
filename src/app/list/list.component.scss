@@ -1,0 +1,10 @@
+// $dark:#0A043C;
+// $light:#FFE3D8;
+// $grey:#BBBBBB;
+// $blue:#03506F;
+.card{
+    max-width: 65ch;
+    min-width: 15rem;
+    border-radius: 5px;
+    border: 2px ridge $dark;
+}

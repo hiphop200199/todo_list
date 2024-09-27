@@ -1,0 +1,23 @@
+$dark:#0A043C;
+$light:#FFE3D8;
+$grey:#BBBBBB;
+$blue:#03506F;
+$bigFont:clamp(2rem,1.5rem + 0.5vw,3rem);
+
+//:host標示host element，非html原生元素預設都是inline元素
+:host{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100dvh;
+    background-color: $light;
+    *{
+        margin: 10px;
+    }
+    h1{
+        background-image: linear-gradient(30deg,$blue,$dark);
+        background-clip: text;
+        color: transparent;
+        font-size: $bigFont;
+    }
+}

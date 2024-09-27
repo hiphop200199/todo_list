@@ -1,0 +1,23 @@
+$dark:#0A043C;
+$radius:20px;
+:host{
+    width: fit-content;
+    align-self: flex-end;
+    border-radius: $radius;
+    border: 3px groove $dark;
+    button{
+        width: 3ch;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+    #dark{
+        border-inline-end: 3px groove $dark;
+      border-top-left-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+    #light{
+        border-top-right-radius: $radius;
+        border-bottom-right-radius: $radius;
+    }
+}
