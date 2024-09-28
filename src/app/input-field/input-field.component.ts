@@ -34,7 +34,8 @@ export class InputFieldComponent {
       
       this.localStorageService.setItem('todo',JSON.stringify(this.lists));
       this.inputText='';
+      console.log('add ok.');
     }
-    console.log('enter something.');
+   
   }
 }

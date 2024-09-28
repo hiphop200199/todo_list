@@ -1,4 +1,4 @@
-import { AfterContentChecked, Component, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, OnChanges, OnInit, QueryList, SimpleChange, SimpleChanges, ViewChild, ViewChildren } from '@angular/core';
 import { LocalstorageService } from '../localstorage.service';
 import { NgFor } from '@angular/common';
 import { list } from './list.interface';
@@ -12,23 +12,32 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss',
 })
-export class ListComponent implements OnInit, AfterContentChecked {
+export class ListComponent implements OnInit,AfterContentChecked{
   constructor(private localStorageService: LocalstorageService) {}
+  
   lists: list[] | null = [];
   jsonString: any;
-
-  editTodo(todo: list): void {}
-  deleteTodo(todo: list): void {
+  
+  
+  deleteTodo(id: string): void {
     // this.localStorageService.removeItem(id);
+    this.jsonString = this.localStorageService.getItem('todo');
+    this.lists = JSON.parse(this.jsonString);
+    if(this.lists!==null){
+      this.lists = this.lists.filter(l => l.id !==id);
+      this.localStorageService.setItem('todo',JSON.stringify(this.lists));
+      console.log('delete ok.');
+    }
   }
   ngOnInit(): void {
     this.jsonString = this.localStorageService.getItem('todo');
     this.lists = JSON.parse(this.jsonString);
     console.log(this.lists);
   }
+  
   ngAfterContentChecked(): void {
     this.jsonString = this.localStorageService.getItem('todo');
     this.lists = JSON.parse(this.jsonString);
-    console.log(this.lists);
+    
   }
 }

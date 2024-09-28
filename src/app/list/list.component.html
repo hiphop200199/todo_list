@@ -1,8 +1,7 @@
-<div *ngFor="let list of lists" class="card">
-  <input disabled class="content" [(ngModel)]="list.content">
+<div *ngFor="let list of lists;let i=index" class="card" [id]="list.id">
+  <h3   class="content" contenteditable="false" [id]="list.id" #text>{{list.content}}</h3>
   <p class="date">{{ list.date}}</p>
-  <button type="button" (click)="editTodo(list)" title="edit">🖋</button>
-  <button type="button" (click)="deleteTodo(list)" title="delete">🗑</button>
+  <button type="button" (click)="deleteTodo(list.id)" title="delete">🗑</button>
 </div>
 
 
